@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Ukryj przewijanie */
+    overflow-y: auto; /* Umożliwienie przewijania w pionie */
     background: url('Designer (31).jpeg') no-repeat center center fixed; /* Tło z obrazem */
     background-size: cover; /* Ustaw tło, aby pokrywało całą stronę */
 }
@@ -86,16 +86,4 @@ body {
 .video img {
     width: 100%; /* Pełna szerokość kontenera */
     border-radius: 8px; /* Zaokrąglone rogi dla obrazu */
-}
-
-.designer-image {
-    width: 100%; /* Pełna szerokość dla obrazu projektanta */
-    max-width: 800px; /* Maksymalna szerokość */
-    margin: 20px auto; /* Wyśrodkowanie obrazu */
-    border-radius: 8px; /* Zaokrąglone rogi dla obrazu */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Cień dla obrazu */
-}
-
-.video:hover {
-    transform: scale(1.05); /* Powiększenie na hover */
 }

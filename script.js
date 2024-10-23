@@ -1,4 +1,3 @@
-// Inicjalizacja sceny Three.js
 let scene, camera, renderer;
 
 function init() {
@@ -7,7 +6,7 @@ function init() {
     camera.position.z = 5; // Ustawienie kamery
 
     renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth, window.innerHeight); // Rozszerzenie renderera na całe okno
     document.body.appendChild(renderer.domElement);
 
     // Sfera jako tło
@@ -25,21 +24,24 @@ function init() {
     animate();
 }
 
-// Uaktualnienie widoku po zmianie rozmiaru okna
+function hoverEffect(video) {
+    video.style.transform = 'scale(1.05)'; // Powiększenie wideo na hover
+}
+
+function resetEffect(video) {
+    video.style.transform = 'scale(1)'; // Resetowanie efektu powiększenia
+}
+
+// Obsługuje zmianę rozmiaru okna
 window.addEventListener('resize', function () {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    camera.aspect = width / height;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(width, height);
 });
 
+// Wywołanie inicjalizacji
 init();
-
-// Funkcje do animacji miniatur wideo
-function hoverEffect(element) {
-    element.style.transform = 'scale(1.1)'; // Powiększenie podczas hover
-}
-
-function resetEffect(element) {
-    element.style.transform = 'scale(1)'; // Resetowanie rozmiaru
-}
 
